@@ -1,0 +1,28 @@
+.header {
+    &__title {
+        margin: 0;
+        visibility: hidden;
+    }
+
+    &__logo {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+    }
+}
+
+@media (min-width: 300px) {
+    .header {
+        &__logo {
+            width: 20%;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .header {
+        &__logo {
+            width: 15%;
+        }
+    }
+}
