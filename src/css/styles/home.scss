@@ -1,0 +1,9 @@
+@import '../utils/palette.scss';
+
+.home {
+    &__section {
+        background-color: $lightGrey;
+        margin: 0 auto;
+        width: 90vw;
+    }
+}

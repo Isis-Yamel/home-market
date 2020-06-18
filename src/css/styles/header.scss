@@ -1,4 +1,8 @@
 .header {
+    &__container {
+        grid-area: header;
+    }
+
     &__title {
         margin: 0;
         visibility: hidden;
@@ -16,6 +20,13 @@
         &__logo {
             width: 20%;
         }
+        &__background {
+            background-image: url(../../assets/background.png);
+            background-position-x: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 25vh;
+        }
     }
 }
 
@@ -23,6 +34,18 @@
     .header {
         &__logo {
             width: 15%;
+        }
+
+        &__background {
+            height: 30vh;
+        }
+    }
+}
+
+@media (min-width: 1080px) {
+    .header {
+        &__background {
+            height: 40vh;
         }
     }
 }

@@ -1,27 +1,16 @@
 @media (min-width: 300px) {
-  .app {
-    &__background {
-        background-image: url(../../assets/background.png);
-        background-position-x: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        height: 25vh;
-    }
-  }
-}
-
-@media (min-width: 768px) {
     .app {
-        &__background {
-            height: 30vh;
+        &__layout {
+            height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 30% 60% 10%;
+            grid-template-areas:
+            'header'
+            'main'
+            'footer';
         }
     }
 }
 
-@media (min-width: 1080px) {
-    .app {
-        &__background {
-            height: 40vh;
-        }
-    }
-}
+
