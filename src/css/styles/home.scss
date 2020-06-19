@@ -1,9 +1,137 @@
 @import '../utils/palette.scss';
 
-.home {
-    &__section {
-        background-color: $lightGrey;
-        margin: 0 auto;
-        width: 90vw;
+/* ----- Home Sign / Log -----
+ ----------------------------*/
+
+@media (min-width: 300px) {
+    .home {
+        &__signSection {
+            align-items: center;
+            background-color: $basicWhite;
+            display: flex;
+            flex-direction: column;
+            height: 34%;
+            justify-content: center;
+            margin: 0 auto;
+            width: 90vw;
+        }
+
+        &__image {
+            display: none;
+        }
+
+        &__button {
+            background-color: $secondRed;
+            border-radius: 30px;
+            border: none;
+            color: $basicWhite;
+            cursor: pointer;
+            height: 30px;
+            margin: 10px;
+            width: 35%;
+        }
     }
 }
+
+@media (min-width: 768px) {
+    .home {
+
+        &__signSection {
+            height: 42%;
+        }
+
+        &__image {
+            display: unset;
+            margin-bottom: 16px;
+            width: 20%;
+        }
+
+        &__button {
+            width: 22%;
+        }
+    }
+}
+
+@media (min-width: 1080px) {
+    .home {
+
+        &__signSection {
+            height: 62%;
+        }
+
+        &__image {
+            width: 15%;
+        }
+    }
+}
+
+/* ---- ABOUT US SECTION -----
+ ----------------------------*/
+
+@media (min-width: 300px) {
+    .about {
+        &__container {
+            align-items: center;
+            color: #A3A3A3;
+            display: flex;
+            flex-flow: column;
+            margin: 70px 0;
+        }
+
+        &__heading {
+            border-bottom: 2px solid $secondRed;
+            font-size: 1.2em;
+            line-height: 0.1em;
+            text-align: center;
+            text-transform: uppercase;
+            width: 70%;
+
+            &--background {
+                background-color: $lightGrey;
+                padding: 0 20px;
+            }
+        }
+
+        &__paragraph {
+            font-size: 1.3em;
+            margin-top: 44px;
+            text-align: center;
+            width: 80%;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .about {
+
+        &__heading {
+            font-size: 2em;
+            width: 50%;
+        }
+
+        &__paragraph {
+            font-size: 1.3em;
+            margin-top: 44px;
+            text-align: center;
+            width: 60%;
+        }
+    }
+}
+
+/* ---- BENEFITS SECTION -----
+ ----------------------------*/
+
+ .benefit {
+    &__container {
+        background-color: $basicWhite;
+        display: grid;
+        grid-template-columns: repeat( auto-fit, minmax(370px, 1fr) );
+        padding-top: 50px;
+    }
+
+    &__elements {
+        margin: 0 auto;
+        text-align: center;
+        width: 60%;
+    }
+ }

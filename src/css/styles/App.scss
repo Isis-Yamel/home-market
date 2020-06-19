@@ -4,12 +4,35 @@
             height: 100vh;
             display: grid;
             grid-template-columns: 1fr;
-            grid-template-rows: 30% 60% 10%;
+            grid-template-rows: 20% 70% 10%;
             grid-template-areas:
             'header'
             'main'
             'footer';
         }
+    }
+}
+
+@media (min-width: 768px) {
+    .app {
+        &__layout {
+            grid-template-rows: 25% 65% 10%;
+        }
+    }
+}
+
+@media (min-width: 1080px) {
+    .app {
+        &__layout {
+            grid-template-rows: 30% 60% 10%;
+        }
+    }
+}
+
+.main {
+    &__container {
+        grid-area: main;
+        margin: 0 auto;
     }
 }
 
