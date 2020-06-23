@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '../components/header';
 import Home from '../components/home-page/home';
+import Footer from '../components/footer';
 import '../css/styles/App.scss';
 
 import { BrowserRouter } from 'react-router-dom';
@@ -16,6 +17,7 @@ const App = () => {
                         <Route exact path='/' component={Home}/>
                     </Switch>
                 </main>
+                <Footer/>
             </div>
         </BrowserRouter>
     );

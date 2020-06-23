@@ -16,6 +16,7 @@ export default {
         'cook-text': 'Select one of our recipes, and you can add the ingredients to the cart. You can mark things you want from your favorite brands! You are now ready to make your recipes with the exact amounts.',
         'search-title': 'Search is easier',
         'audio-search': 'You no longer need to write to find a product. You press the microphone icon and you can search by speaking. "Yerba Playadito", "Huggies Diapers", "Knorr Broths", "Creamy Cheese"',
-        'search-bar-code': 'If you need to refill your shampoo or rinse, go to the bathroom and scan the bar code on the container. This way you can quickly and simply look for them without fear of making a mistake. Our new search bar has an icon to start searching by bar code.'
+        'search-bar-code': 'If you need to refill your shampoo or rinse, go to the bathroom and scan the bar code on the container. This way you can quickly and simply look for them without fear of making a mistake. Our new search bar has an icon to start searching by bar code.',
+        'footer-message': 'We are home market an internal project to show the maximum web knowledge.'
     }
 };

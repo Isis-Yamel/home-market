@@ -1,0 +1,20 @@
+.footer {
+    &__layout {
+        grid-area: footer;
+    }
+
+    &__icons {
+        background-color: white;
+        padding: 10px;
+        text-align: center;
+    }
+    &__text {
+        font-style: italic;
+        text-align: center;
+    }
+}
+
+.fab {
+    font-size: 2em;
+    margin-right: 10px;
+}

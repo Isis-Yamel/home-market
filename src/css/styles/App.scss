@@ -1,7 +1,6 @@
 @media (min-width: 300px) {
     .app {
         &__layout {
-            height: 100vh;
             display: grid;
             grid-template-columns: 1fr;
             grid-template-rows: 20% 70% 10%;

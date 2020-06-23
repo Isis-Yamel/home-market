@@ -5,8 +5,8 @@ import { FormattedMessage } from 'react-intl';
 const AboutUs = () => {
     return (
         <section className='about__container'>
-            <h2 className='about__heading'>
-                <span className='about__heading--background'>
+            <h2 className='heading'>
+                <span className='heading__background'>
                     <FormattedMessage id='about-us'/>
                 </span>
             </h2>

@@ -16,6 +16,7 @@ export default {
         'cook-text': 'Seleccionas una de nuestras recetas, y puedes añadir los ingredientes al carrito. Puedes marcar cosas que quieras de tu marcas favoritas!. Ya estas listo para hacer tus recetas con las cantidades exactas.',
         'search-title': 'Buscar es más fácil',
         'audio-search': 'Ya no es necesario escribir para buscar un producto. Presionas el icono de micrófono y puedes buscar hablando. "Yerba Playadito", "Pañales Huggies", "Caldos Knorr", "Queso cremoso"',
-        'search-bar-code': 'Si lo que necesitas es reponer tu shampoo o enjuague, ve al baño y escanea el código de barra que tiene el envase. De esta manera rápida y simple vas a poder buscarlos sin temor a equivocarte. NUestra nueva barra buscadora tienen un icono para comenzar a buscar por código de barra.'
+        'search-bar-code': 'Si lo que necesitas es reponer tu shampoo o enjuague, ve al baño y escanea el código de barra que tiene el envase. De esta manera rápida y simple vas a poder buscarlos sin temor a equivocarte. NUestra nueva barra buscadora tienen un icono para comenzar a buscar por código de barra.',
+        'footer-message': 'Somos home market un proyecto interno para mostrar al maximo el conocimiento web.'
     }
 };
