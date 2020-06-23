@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import barCodeIcon from '../../assets/barcode-icon.png';
 import micIcon from '../../assets/mic-icon.png';

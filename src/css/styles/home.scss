@@ -7,31 +7,14 @@
     .home {
         &__signSection {
             align-items: center;
-            background-color: $basicWhite;
             display: flex;
             flex-direction: column;
             justify-content: center;
             margin: 0 auto;
-            padding: 50px 0;
-            position: relative;
-            top: -53px;
-            width: 90vw;
-            z-index: 2;
         }
 
         &__image {
             display: none;
-        }
-
-        &__button {
-            background-color: $secondRed;
-            border-radius: 30px;
-            border: none;
-            color: $basicWhite;
-            cursor: pointer;
-            height: 30px;
-            margin: 10px;
-            width: 35%;
         }
     }
 }
@@ -45,9 +28,6 @@
             width: 20%;
         }
 
-        &__button {
-            width: 22%;
-        }
     }
 }
 

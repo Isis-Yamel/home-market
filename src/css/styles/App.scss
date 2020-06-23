@@ -1,3 +1,5 @@
+@import '../utils/palette.scss';
+
 @media (min-width: 300px) {
     .app {
         &__layout {
@@ -35,4 +37,53 @@
     }
 }
 
+/* ----- General component -----
+ ----------------------------*/
 
+.registerSection {
+    background-color: $basicWhite;
+    padding: 50px 0;
+    position: relative;
+    bottom: 54px;
+    width: 90vw;
+    z-index: 2;
+}
+
+.redButton {
+    background-color: $secondRed;
+    border-radius: 30px;
+    border: none;
+    color: $basicWhite;
+    cursor: pointer;
+    font-size: 1.3em;
+    height: 44px;
+    margin: 10px;
+    width: 35%;
+
+    &:hover {
+        background-color: $primaryRed;
+    }
+}
+
+.redButton a {
+    color: $basicWhite;
+}
+
+.whiteButton {
+    background-color: $basicWhite;
+    border-radius: 30px;
+    border: 1px solid black;
+    cursor: pointer;
+    font-size: 1.3em;
+    height: 44px;
+    margin: 10px;
+    width: 35%;
+
+    &:hover {
+        background-color: $lightGrey;
+    }
+}
+
+.whiteButton a {
+    color: #000000;
+}

@@ -17,6 +17,17 @@ export default {
         'search-title': 'Search is easier',
         'audio-search': 'You no longer need to write to find a product. You press the microphone icon and you can search by speaking. "Yerba Playadito", "Huggies Diapers", "Knorr Broths", "Creamy Cheese"',
         'search-bar-code': 'If you need to refill your shampoo or rinse, go to the bathroom and scan the bar code on the container. This way you can quickly and simply look for them without fear of making a mistake. Our new search bar has an icon to start searching by bar code.',
-        'footer-message': 'We are home market an internal project to show the maximum web knowledge.'
+        'footer-message': 'We are home market an internal project to show the maximum web knowledge.',
+        'welcome': 'Welcome!',
+        'name-lastname': 'Name & Lastname',
+        'phone': 'Phone',
+        'email': 'Email',
+        'password': 'Password',
+        'password-message': 'Must contain at least 6 characters',
+        'forgot-password': 'Forgotten your password?',
+        'new-user': 'Are you new at Home market?',
+        'free-registration': 'Register for free',
+        'sign-in': 'Sign me',
+        'cancel': 'Cancel',
     }
 };

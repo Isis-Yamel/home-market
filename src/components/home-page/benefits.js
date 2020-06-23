@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { benefitsInfo } from './benefitsInformation';
+import { benefitsInfo } from '../../utils/benefitsInformation';
 import { FormattedMessage } from 'react-intl';
 
 const renderBenefits = () => {

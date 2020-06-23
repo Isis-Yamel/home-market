@@ -1,7 +1,7 @@
-import payAtHome from '../../assets/pagas-en-casa.png';
-import freeDelivery from '../../assets/entrega-gratis.png';
-import freshProducts from '../../assets/productos-frescos.png';
-import cookRecipes from '../../assets/recetas-de-cocina.png';
+import payAtHome from '../assets/pagas-en-casa.png';
+import freeDelivery from '../assets/entrega-gratis.png';
+import freshProducts from '../assets/productos-frescos.png';
+import cookRecipes from '../assets/recetas-de-cocina.png';
 
 export const benefitsInfo = [
     {
