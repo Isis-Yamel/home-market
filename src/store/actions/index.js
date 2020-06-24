@@ -1,11 +1,12 @@
-export const signIn = () => {
-    return {
-        type: 'SIGN_IN',
-    };
-};
+import onUserLogin from '../../apis/userLogin';
 
-export const signOut = () => {
-    return {
-        type: 'SIGN_OUT'
+export const logIn = (data) => {
+    return async dispatch => {
+        onUserLogin(data).then((response) => {
+            dispatch({
+                type: 'LOG_IN',
+                payload: response.data
+            })
+        })
     };
 };

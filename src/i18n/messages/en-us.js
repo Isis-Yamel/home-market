@@ -29,5 +29,8 @@ export default {
         'free-registration': 'Register for free',
         'sign-in': 'Sign me',
         'cancel': 'Cancel',
+        'forgot-pass-title': 'Password Forwarding',
+        'forgot-pass-text': 'Enter your email so we can resend your new password',
+        'send': 'Send',
     }
 };

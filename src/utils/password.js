@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 
 class Password extends Component {
 
@@ -7,15 +7,18 @@ class Password extends Component {
     };
 
     togglePasswordVisiblity = () => {
-        const { isPasswordShown } = this.state;
-        this.setState({ isPasswordShown: !isPasswordShown });
+        this.setState({ isPasswordShown: !this.state.isPasswordShown });
     };
 
     render () {
-        const { isPasswordShown } = this.state;
         return (
             <label className='registration__showPass' htmlFor='password'>
-                <input className='registration__inputs' name='password' required type={isPasswordShown ? "text" : "password"}/>
+                <input
+                    onChange={this.props.passwordUpdate}
+                    className='registration__inputs'
+                    name='password'
+                    required
+                    type={this.state.isPasswordShown ? "text" : "password"}/>
                 <i className='fa fa-eye registration__eyeIcon' onClick={this.togglePasswordVisiblity}/>
             </label>
         );

@@ -29,5 +29,8 @@ export default {
         'free-registration': 'Registrate gratis',
         'sign-in': 'Registrarme',
         'cancel': 'Cancelar',
+        'forgot-pass-title': 'Reenvio de Contraseña',
+        'forgot-pass-text': 'Ingrese su email para que podamos reenviarle su nueva contraseña',
+        'send': 'Enviar',
     }
 };

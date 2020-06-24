@@ -5,9 +5,9 @@ import { FormattedMessage } from 'react-intl';
 const renderBenefits = () => {
     return (
         <Fragment>
-            {benefitsInfo.map((benefit) => {
+            {benefitsInfo.map((benefit, index) => {
                 return (
-                    <article className='benefit__elements'>
+                    <article className='benefit__elements' key={index}>
                         <img src={`${benefit.imageSource}`} alt={`${benefit.areaLabel}`}/>
                         <h3 className='benefit__title'>
                             <FormattedMessage id={`${benefit.title}`}/>

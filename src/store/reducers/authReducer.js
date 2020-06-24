@@ -1,13 +1,22 @@
 const INITIAL_STATE = {
-    isSignedIn: null,
+    token: '',
+    isUserAuth: false,
+};
+
+const authUser = (state, payload) => {
+    return {
+        ...state,
+        token: payload,
+        isUserAuth: true
+    };
 };
 
 export default (state = INITIAL_STATE, action) => {
     switch (action.type) {
-        case 'SIGN_IN':
-            return {...state, isSignedIn: true, userId: action.payload};
+        case 'LOG_IN':
+            return authUser({...state}, action.payload);
         case 'SIGN_OUT':
-            return {...state, isSignedIn: false, userId: null}
+            return {...state}
         default: return state;
     }
 };

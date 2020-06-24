@@ -4,6 +4,7 @@ import Home from '../components/home-page/home';
 import Footer from '../components/footer';
 import userLogin from '../components/user-registration/userLogin';
 import userSignin from '../components/user-registration/userSignin';
+import ForgotPassword from '../components/user-registration/forgotPassword';
 import '../css/styles/App.scss';
 
 import { BrowserRouter } from 'react-router-dom';
@@ -19,6 +20,7 @@ const App = () => {
                         <Route exact path='/' component={Home}/>
                         <Route path='/log-in' component={userLogin}/>
                         <Route path='/sig-in' component={userSignin}/>
+                        <Route path='/forgot-password' component={ForgotPassword}/>
                     </Switch>
                 </main>
                 <Footer/>
