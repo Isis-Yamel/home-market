@@ -9,12 +9,6 @@
             flex-direction: column;
         }
 
-        &__fieldset {
-            border: none;
-            padding: 0;
-            width: 75%;
-        }
-
         &__form {
             width: 100%;
         }
@@ -23,20 +17,6 @@
             margin-bottom: 20px;
             text-align: center;
             width: 100%;
-        }
-
-        &__inputs {
-            border-radius: 20px;
-            margin-bottom: 14px;
-            padding: 6px;
-            width: 100%;
-        }
-
-        &__information {
-            display: flex;
-            font-size: 0.8em;
-            justify-content: space-between;
-            width: 75%;
         }
 
         &__text {
@@ -60,32 +40,6 @@
 
         &__showPass {
             position: relative;
-        }
-    }
-}
-
-@media (min-width: 768px) {
-    .registration {
-
-        &__fieldset {
-            width: 50%;
-        }
-
-        &__information {
-            width: 50%;
-        }
-    }
-}
-
-@media (min-width: 1080px) {
-    .registration {
-
-        &__fieldset {
-            width: 32%;
-        }
-
-        &__information {
-            width: 32%;
         }
     }
 }

@@ -156,10 +156,16 @@
 }
 
 @media (min-width: 1080px) {
+
+    .benefit {
+        &__container {
+            grid-template-columns: repeat( auto-fit, minmax(430px, 1fr) );
+        }
+    }
+
     .search {
         &__layout {
-            margin: 0 auto;
-            width: 70%;
+            grid-template-columns: repeat( auto-fit, minmax(430px, 1fr) );
         }
 
         &__elements {

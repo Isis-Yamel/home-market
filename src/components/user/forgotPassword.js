@@ -10,13 +10,14 @@ const ForgotPassword = () => {
             <p>
                 <FormattedMessage id='forgot-pass-text'/>
             </p>
-            <fieldset className='registration__fieldset'>
-                <legend>Email for password recovery</legend>
-                <p>
-                    <FormattedMessage id='email'/>*
-                </p>
+            <fieldset className='fieldsetStyle'>
+                <legend>
+                    <p>
+                        <FormattedMessage id='email'/>*
+                    </p>
+                </legend>
                 <label htmlFor='email'>
-                    <input className='registration__inputs' name='email' required type='email'/>
+                    <input className='inputStyle' name='email' required type='email'/>
                 </label>
             </fieldset>
             <button className='redButton'>

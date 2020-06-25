@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
+
 import { connect } from 'react-redux';
 import { FormattedMessage } from 'react-intl';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
+
 import Password from '../../utils/password';
 import { logIn } from '../../store/actions';
 
 import '../../css/styles/userRegistration.scss';
 
 class userLogin extends Component {
-
     state = {
         user: {
             email: '',
@@ -25,10 +26,18 @@ class userLogin extends Component {
         });
     };
 
+    method () {
+        if (this.props.auth === true) {
+            return <Redirect push to='/catalog'/>
+        } else {
+            return <p>Por favor ingresa o registrate</p>
+        };
+    };
+
     renderLoginForm = () => {
         return (
             <section className='registerSection registration__layout'>
-                <fieldset className='registration__fieldset'>
+                <fieldset className='fieldsetStyle'>
                     <legend className='registration__legend'>
                         <h3>
                             <FormattedMessage id='welcome'/>
@@ -39,7 +48,7 @@ class userLogin extends Component {
                             <FormattedMessage id='email'/>*
                         </p>
                         <label htmlFor='email'>
-                            <input onChange={(e) => this.storeUserInfo(e, 'email')} className='registration__inputs' name='email' required type='email'/>
+                            <input onChange={(e) => this.storeUserInfo(e, 'email')} className='inputStyle' name='email' required type='email'/>
                         </label>
                         <p>
                             <FormattedMessage id='password'/>*
@@ -47,7 +56,7 @@ class userLogin extends Component {
                         <Password passwordUpdate={(e) => this.storeUserInfo(e, 'password')}/>
                     </form>
                 </fieldset>
-                <div className='registration__information'>
+                <div className='infoLayout'>
                     <p>
                         <Link to='/forgot-password'>
                             <FormattedMessage id='forgot-password'/>
@@ -65,6 +74,7 @@ class userLogin extends Component {
                 <button onClick={() => this.props.logIn(this.state.user)} className='redButton'>
                     <FormattedMessage id='user-login'/>
                 </button>
+                {this.method()}
             </section>
         );
     };
@@ -74,4 +84,10 @@ class userLogin extends Component {
     };
 };
 
-export default connect(null, { logIn })(userLogin);
+const mapStateToProps = state => {
+    return {
+        auth: state.auth.isUserAuth
+    };
+};
+
+export default connect(mapStateToProps, { logIn })(userLogin);

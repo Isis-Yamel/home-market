@@ -1,0 +1,71 @@
+@import '../utils/palette.scss';
+
+@media (min-width: 300px) {
+    .menu {
+        &__container {
+            position: relative;
+        }
+
+        &__hamButton {
+            background-color: black;
+            bottom: 50px;
+            color: $basicWhite;
+            cursor: pointer;
+            font-size: 2.2em;
+            padding: 4px;
+            position: relative;
+            z-index: 2;
+        }
+
+        &__list {
+            background-color: black;
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            top: 38px;
+            width: 76%;
+            z-index: 1
+        }
+
+        &__items {
+            font-size: 1.2em;
+            list-style: none;
+
+            &--style {
+                color: $basicWhite;
+            }
+        }
+
+        &__icons {
+            color: $basicWhite;
+            font-size: 2.2em;
+            padding-left: 52px;
+            width: 120px;
+        }
+
+        &__element {
+            display: flex;
+            padding: 10px 0;
+
+            &:hover {
+                background-color: #9A382F;
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .menu {
+        &__list {
+            width: 40%;
+        }
+    }
+}
+
+@media (min-width: 1080px) {
+    .menu {
+        &__list {
+            width: 26%;
+        }
+    }
+}

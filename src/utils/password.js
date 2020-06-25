@@ -15,7 +15,7 @@ class Password extends Component {
             <label className='registration__showPass' htmlFor='password'>
                 <input
                     onChange={this.props.passwordUpdate}
-                    className='registration__inputs'
+                    className='inputStyle'
                     name='password'
                     required
                     type={this.state.isPasswordShown ? "text" : "password"}/>

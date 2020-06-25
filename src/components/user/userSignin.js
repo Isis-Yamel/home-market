@@ -12,7 +12,7 @@ class userSignin extends Component {
 const renderSigninForm = () => {
     return (
         <section className='registerSection registration__layout'>
-            <fieldset className='registration__fieldset'>
+            <fieldset className='fieldsetStyle'>
                 <legend className='registration__legend'>
                     <h3>
                         <FormattedMessage id='sign-in'/>
@@ -23,19 +23,19 @@ const renderSigninForm = () => {
                         <FormattedMessage id='name-lastname'/>*
                     </p>
                     <label htmlFor='name'>
-                        <input className='registration__inputs' name='name' type='text' required/>
+                        <input className='inputStyle' name='name' type='text' required/>
                     </label>
                     <p>
                         <FormattedMessage id='phone'/>*
                     </p>
                     <label htmlFor='phone'>
-                        <input className='registration__inputs' name='phone' type='numeric' required/>
+                        <input className='inputStyle' name='phone' type='numeric' required/>
                     </label>
                     <p>
                         <FormattedMessage id='email'/>*
                     </p>
                     <label htmlFor='email'>
-                        <input className='registration__inputs' name='email' required type='email'/>
+                        <input className='inputStyle' name='email' required type='email'/>
                     </label>
                     <p>
                         <FormattedMessage id='password'/>*
@@ -43,7 +43,7 @@ const renderSigninForm = () => {
                     <Password/>
                 </form>
             </fieldset>
-            <div className='registration__information'>
+            <div className='infoLayout'>
                 <button className='whiteButton'>
                     <Link to='/'>
                         <FormattedMessage id='cancel'/>

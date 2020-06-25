@@ -44,8 +44,13 @@
     padding: 50px 0;
     position: relative;
     bottom: 54px;
+    margin: 0 auto;
     width: 90vw;
-    z-index: 2;
+    z-index: 3;
+
+    &__catalog {
+        background-color: unset;
+    }
 }
 
 .redButton {
@@ -85,4 +90,55 @@
 
 .whiteButton a {
     color: #000000;
+}
+
+.catalogSectionLayout {
+    background: white;
+    bottom: 154px;
+    margin: 0 auto;
+    position: relative;
+    width: 90vw;
+    z-index: 2;
+}
+
+.inputStyle {
+    border-radius: 20px;
+    margin-bottom: 14px;
+    padding: 6px;
+    width: 100%;
+}
+
+@media (min-width: 300px) {
+    .infoLayout {
+        display: flex;
+        font-size: 0.8em;
+        justify-content: space-between;
+        width: 75%;
+    }
+
+    .fieldsetStyle {
+        border: none;
+        padding: 0;
+        width: 75%;
+    }
+}
+
+@media (min-width: 768px) {
+    .fieldsetStyle{
+        width: 50%;
+    }
+
+    .infoLayout {
+        width: 50%;
+    }
+}
+
+@media (min-width: 1080px) {
+    .fieldsetStyle{
+        width: 36%;
+    }
+
+    .infoLayout {
+        width: 36%;
+    }
 }

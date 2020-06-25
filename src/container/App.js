@@ -2,15 +2,18 @@ import React from 'react';
 import Header from '../components/header';
 import Home from '../components/home-page/home';
 import Footer from '../components/footer';
-import userLogin from '../components/user-registration/userLogin';
-import userSignin from '../components/user-registration/userSignin';
-import ForgotPassword from '../components/user-registration/forgotPassword';
+import userLogin from '../components/user/userLogin';
+import userSignin from '../components/user/userSignin';
+import ForgotPassword from '../components/user/forgotPassword';
+import Menu from '../components/catalog/menu';
 import '../css/styles/App.scss';
 
+import { connect } from 'react-redux';
+import ProtectedRoute from '../utils/protectedRoute';
 import { BrowserRouter } from 'react-router-dom';
 import { Route, Switch } from 'react-router-dom';
 
-const App = () => {
+const App = ({ auth }) => {
     return (
         <BrowserRouter>
             <div className="app__layout">
@@ -21,6 +24,7 @@ const App = () => {
                         <Route path='/log-in' component={userLogin}/>
                         <Route path='/sig-in' component={userSignin}/>
                         <Route path='/forgot-password' component={ForgotPassword}/>
+                        <ProtectedRoute path='/catalog' loggedIn={auth} component={Menu}/>
                     </Switch>
                 </main>
                 <Footer/>
@@ -29,4 +33,11 @@ const App = () => {
     );
 };
 
-export default App;
+const mapStateToProps = state => {
+    return {
+        auth: state.auth.isUserAuth
+    };
+};
+
+
+export default connect(mapStateToProps, null)(App);
