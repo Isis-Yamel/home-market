@@ -1,27 +1,27 @@
-.header {
-    &__container {
-        grid-area: header;
-        position: relative;
-        z-index: 1;
-    }
-
-    &__title {
-        margin: 0;
-        visibility: hidden;
-    }
-
-    &__logo {
-        position: absolute;
-        right: 20px;
-        top: 20px;
-    }
-}
+/* ---- HEADER SECTION -----
+ ----------------------------*/
 
 @media (min-width: 300px) {
     .header {
+
+        &__container {
+            grid-area: header;
+            position: relative;
+            z-index: 1;
+        }
+
+        &__title {
+            margin: 0;
+            visibility: hidden;
+        }
+
         &__logo {
+            position: absolute;
+            right: 20px;
+            top: 20px;
             width: 20%;
         }
+
         &__background {
             background-image: url(../../assets/background.png);
             background-position-x: center;

@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { FormattedMessage } from 'react-intl';
 import { Link, Redirect } from 'react-router-dom';
 
-import Password from '../../utils/password';
+import Password from '../../elements/password';
 import { logIn } from '../../store/actions';
 
 import '../../css/styles/userRegistration.scss';
@@ -86,7 +86,7 @@ class userLogin extends Component {
 
 const mapStateToProps = state => {
     return {
-        auth: state.auth.isUserAuth
+        auth: state.data.isUserAuth
     };
 };
 

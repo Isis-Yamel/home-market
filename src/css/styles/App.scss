@@ -36,7 +36,7 @@
     }
 }
 
-/* ----- General component -----
+/* ----- REUSABLE STYLES -----
  ----------------------------*/
 
 .registerSection {
@@ -94,8 +94,9 @@
 
 .catalogSectionLayout {
     background: white;
-    bottom: 154px;
+    bottom: 200px;
     margin: 0 auto;
+    padding: 34px;
     position: relative;
     width: 90vw;
     z-index: 2;
@@ -106,6 +107,10 @@
     margin-bottom: 14px;
     padding: 6px;
     width: 100%;
+
+    &__searchBar {
+        width: 20%;
+    }
 }
 
 @media (min-width: 300px) {

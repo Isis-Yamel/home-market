@@ -1,3 +1,6 @@
+/* ---- MENU BAR SECTION -----
+ ----------------------------*/
+
 @import '../utils/palette.scss';
 
 @media (min-width: 300px) {
@@ -68,4 +71,17 @@
             width: 26%;
         }
     }
+}
+
+/* ---- SEARCH BAR SECTION -----
+ ----------------------------*/
+
+.searchBar {
+    &__container {
+        bottom: 189px;
+        left: 74%;
+        position: relative;
+        z-index: 5;
+    }
+
 }

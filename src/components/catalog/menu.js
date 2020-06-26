@@ -7,23 +7,25 @@ import { connect } from 'react-redux';
 import ProtectedRoute from '../../utils/protectedRoute';
 import Profile from '../user/myProfile';
 import MenuBar from './menuBar';
+import SearchBar from './searchBar';
+import Catalogue from './catalogue';
 
 const Menu = ({ auth }) => {
     return (
         <BrowserRouter>
-            <div>
-                <MenuBar/>
-                <Switch>
-                    <ProtectedRoute path='/my-profile' loggedIn={auth} component={Profile}/>
-                </Switch>
-            </div>
+            <MenuBar/>
+            <SearchBar/>
+            <Switch>
+                <ProtectedRoute path='/my-profile' loggedIn={auth} component={Profile}/>
+                <ProtectedRoute path='/catalog' loggedIn={auth} component={Catalogue}/>
+            </Switch>
         </BrowserRouter>
     );
 };
 
 const mapStateToProps = state => {
     return {
-        auth: state.auth.isUserAuth
+        auth: state.data.isUserAuth
     };
 };
 

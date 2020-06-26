@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { Link } from 'react-router-dom';
-import Password from '../../utils/password';
+import Password from '../../elements/password';
 
 class userSignin extends Component {
     render () {

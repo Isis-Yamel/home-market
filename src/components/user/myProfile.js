@@ -34,9 +34,6 @@ const Profile = () => {
                         <label htmlFor='adress'>
                             <input className='inputStyle' name='adress' type='text' required/>
                         </label>
-                        <p>
-                            <FormattedMessage id='lang-option'/>
-                        </p>
                     </form>
                 </fieldset>
                 <div className='infoLayout fieldsetStyle profile__componentAligment'>

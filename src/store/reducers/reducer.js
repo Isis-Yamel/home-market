@@ -15,8 +15,6 @@ export default (state = INITIAL_STATE, action) => {
     switch (action.type) {
         case 'LOG_IN':
             return authUser({...state}, action.payload);
-        case 'SIGN_OUT':
-            return {...state}
         default: return state;
     }
 };
