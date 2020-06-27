@@ -5,7 +5,7 @@
 .catalogue {
     &__iconsContainer {
         display: flex;
-        height: 64px;
+        height: 80px;
         justify-content: space-around;
         margin: 0 auto;
         width: 60%;
@@ -16,12 +16,12 @@
         border-radius: 50%;
         border: 2px solid $primaryRed;
         cursor: pointer;
+        height: 66px;
         position: relative;
-        width: 10%;
+        width: 66px !important;
 
         &:hover {
             background-color: $primaryRed;
-            color: $basicWhite;
         }
     }
 
@@ -30,6 +30,22 @@
         object-fit: scale-down;
         position: relative;
         top: 10px;
-        width: 70%;
+        width: 44px;
+    }
+}
+
+@media (min-width: 300px) {
+    .catalogue {
+        &__iconsContainer {
+            width: 90%;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .catalogue {
+        &__iconsContainer {
+            width: 60%;
+        }
     }
 }

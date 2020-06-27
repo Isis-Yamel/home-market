@@ -29,7 +29,7 @@ const App = ({ auth }) => {
                     <SwitchToggle eng={locales.ENGLISH} spa={locales.SPANISH} setLocale={setLocale}/>
                     <main className='main__container'>
                         <Switch>
-                            <Route exact path='/home' component={Home}/>
+                            <Route exact path='/' component={Home}/>
                             <Route path='/log-in' component={userLogin}/>
                             <Route path='/sig-in' component={userSignin}/>
                             <Route path='/forgot-password' component={ForgotPassword}/>
