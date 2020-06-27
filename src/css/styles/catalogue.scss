@@ -1,0 +1,35 @@
+/* ---- CATALOGUE SECTION -----
+ ----------------------------*/
+@import '../utils/palette.scss';
+
+.catalogue {
+    &__iconsContainer {
+        display: flex;
+        height: 64px;
+        justify-content: space-around;
+        margin: 0 auto;
+        width: 60%;
+    }
+
+    &__iconContainer {
+        background-color: $lightGrey;
+        border-radius: 50%;
+        border: 2px solid $primaryRed;
+        cursor: pointer;
+        position: relative;
+        width: 10%;
+
+        &:hover {
+            background-color: $primaryRed;
+            color: $basicWhite;
+        }
+    }
+
+    &__iconImage {
+        left: 9px;
+        object-fit: scale-down;
+        position: relative;
+        top: 10px;
+        width: 70%;
+    }
+}

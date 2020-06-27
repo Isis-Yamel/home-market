@@ -14,7 +14,8 @@ class Password extends Component {
         return (
             <label className='registration__showPass' htmlFor='password'>
                 <input
-                    onChange={this.props.passwordUpdate}
+                    value={this.props.value}
+                    onChange={this.props.storePassword}
                     className='inputStyle'
                     name='password'
                     required

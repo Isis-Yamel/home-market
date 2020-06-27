@@ -41,7 +41,7 @@ export const menuData = [
     },
     {
         label: 'log-out',
-        route: '/',
+        route: '/home',
         icon: 'fas fa-sign-out-alt'
     }
 ];

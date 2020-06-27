@@ -11,19 +11,12 @@ import '../../css/styles/userRegistration.scss';
 
 class userLogin extends Component {
     state = {
-        user: {
-            email: '',
-            password: ''
-        }
+        email: '',
+        password: ''
     };
 
-    storeUserInfo (e, propUpdate) {
-        this.setState({
-            user: {
-                ...this.state.user,
-                [propUpdate]: e.target.value
-            }
-        });
+    handleUser = ({target}) => {
+        this.setState({ [target.name]: target.value })
     };
 
     method () {
@@ -48,12 +41,17 @@ class userLogin extends Component {
                             <FormattedMessage id='email'/>*
                         </p>
                         <label htmlFor='email'>
-                            <input onChange={(e) => this.storeUserInfo(e, 'email')} className='inputStyle' name='email' required type='email'/>
+                            <input
+                                className='inputStyle'
+                                name='email'
+                                type='email' required
+                                value={this.state.email}
+                                onChange={this.handleUser}/>
                         </label>
                         <p>
                             <FormattedMessage id='password'/>*
                         </p>
-                        <Password passwordUpdate={(e) => this.storeUserInfo(e, 'password')}/>
+                        <Password value={this.state.password} storePassword={this.handleUser}/>
                     </form>
                 </fieldset>
                 <div className='infoLayout'>
@@ -71,7 +69,7 @@ class userLogin extends Component {
                         </Link>
                     </p>
                 </div>
-                <button onClick={() => this.props.logIn(this.state.user)} className='redButton'>
+                <button onClick={() => this.props.logIn(this.state)} className='redButton'>
                     <FormattedMessage id='user-login'/>
                 </button>
                 {this.method()}
