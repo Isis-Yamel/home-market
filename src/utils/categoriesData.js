@@ -8,31 +8,31 @@ import bakery from '../assets/panderia.png';
 
 export const categoriesData = [
     {
-        imageSource: beverages,
-        areaLabel: 'beverages',
-    },
-    {
         imageSource: market,
         areaLabel: 'market',
-    },
-    {
-        imageSource: butchery,
-        areaLabel: 'butchery',
-    },
-    {
-        imageSource: cleaning,
-        areaLabel: 'cleaning',
-    },
-    {
-        imageSource: dairy,
-        areaLabel: 'dairy',
     },
     {
         imageSource: vegetables,
         areaLabel: 'vegetables',
     },
     {
+        imageSource: butchery,
+        areaLabel: 'butchery',
+    },
+    {
+        imageSource: dairy,
+        areaLabel: 'dairy',
+    },
+    {
+        imageSource: beverages,
+        areaLabel: 'beverages',
+    },
+    {
         imageSource: bakery,
         areaLabel: 'bakery',
-    }
+    },
+    {
+        imageSource: cleaning,
+        areaLabel: 'cleaning',
+    },
 ];

@@ -47,5 +47,6 @@ export default {
         'offers': 'Ofertas',
         'catalog': 'Catalogo',
         'log-out': 'Log Out',
+        'success-sign': 'Tu usuario se ha creado correctamente! Ya puedes ingresar',
     }
 };

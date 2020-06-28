@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import profilePic from '../../assets/my-profile.png';
+import { Link } from 'react-router-dom';
 
 import '../../css/styles/myProfile.scss';
 import { FormattedMessage } from 'react-intl';
@@ -38,7 +39,9 @@ const Profile = () => {
                 </fieldset>
                 <div className='infoLayout fieldsetStyle profile__componentAligment'>
                     <button className='whiteButton'>
+                        <Link to='/'>
                             <FormattedMessage id='cancel'/>
+                        </Link>
                     </button>
                     <button className='redButton'>
                         <FormattedMessage id='save'/>

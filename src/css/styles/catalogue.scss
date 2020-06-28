@@ -5,7 +5,7 @@
 .catalogue {
     &__iconsContainer {
         display: flex;
-        height: 80px;
+        height: 100px;
         justify-content: space-around;
         margin: 0 auto;
         width: 60%;
@@ -26,11 +26,17 @@
     }
 
     &__iconImage {
+        height: 44px;
         left: 9px;
         object-fit: scale-down;
         position: relative;
         top: 10px;
         width: 44px;
+    }
+
+    &__title {
+        position: relative;
+        top: 34px;
     }
 }
 

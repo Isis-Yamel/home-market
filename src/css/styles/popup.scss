@@ -1,0 +1,17 @@
+/* ---- POP UP COMPONENT -----
+ ----------------------------*/
+
+.popup {
+    &__container {
+        align-items: center;
+        background-color: rgba(0,0,0, 0.7);
+        color: white;
+        display: flex;
+        flex-direction: column;
+        height: 68%;
+        justify-content: center;
+        position: fixed;
+        top: 172px;
+        width: 69%;
+    }
+}

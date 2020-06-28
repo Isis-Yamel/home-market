@@ -1,4 +1,5 @@
 import onUserLogin from '../../apis/userLogin';
+import onUserLogout from '../../apis/userLogout';
 import onUserSignin from '../../apis/userSignin';
 import fetchGroups from '../../apis/fetchGroups';
 
@@ -8,6 +9,16 @@ export const logIn = (data) => {
             dispatch({
                 type: 'LOG_IN',
                 payload: response.data
+            })
+        })
+    };
+};
+
+export const logOut = () => {
+    return async dispatch => {
+        onUserLogout().then(() => {
+            dispatch({
+                type: 'LOG_OUT',
             })
         })
     };

@@ -1,7 +1,7 @@
 const INITIAL_STATE = {
     token: '',
     isUserAuth: false,
-    groups: {}
+    groups: []
 };
 
 const authUser = (state, payload) => {

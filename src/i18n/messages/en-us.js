@@ -47,5 +47,6 @@ export default {
         'offers': 'Offers',
         'catalog': 'Catalogue',
         'log-out': 'Log Out',
+        'success-sign': 'Your user has been created correctly! You can now log in',
     }
 };

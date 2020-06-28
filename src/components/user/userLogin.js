@@ -11,12 +11,14 @@ import '../../css/styles/userRegistration.scss';
 
 class userLogin extends Component {
     state = {
-        email: '',
-        password: ''
+        user: {
+            email: '',
+            password: ''
+        }
     };
 
     handleUser = ({target}) => {
-        this.setState({ [target.name]: target.value })
+        this.setState({ user: {...this.state.user, [target.name]: target.value} })
     };
 
     method () {
@@ -45,13 +47,13 @@ class userLogin extends Component {
                                 className='inputStyle'
                                 name='email'
                                 type='email' required
-                                value={this.state.email}
+                                value={this.state.user.email}
                                 onChange={this.handleUser}/>
                         </label>
                         <p>
                             <FormattedMessage id='password'/>*
                         </p>
-                        <Password value={this.state.password} storePassword={this.handleUser}/>
+                        <Password value={this.state.user.password} storePassword={this.handleUser}/>
                     </form>
                 </fieldset>
                 <div className='infoLayout'>
@@ -69,7 +71,7 @@ class userLogin extends Component {
                         </Link>
                     </p>
                 </div>
-                <button onClick={() => this.props.logIn(this.state)} className='redButton'>
+                <button onClick={() => this.props.logIn(this.state.user)} className='redButton'>
                     <FormattedMessage id='user-login'/>
                 </button>
                 {this.method()}

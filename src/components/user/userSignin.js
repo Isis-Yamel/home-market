@@ -5,17 +5,29 @@ import Password from '../../elements/password';
 import { connect } from 'react-redux';
 import { signIn } from '../../store/actions';
 
+import Popup from '../../elements/popup';
+
 class userSignin extends Component {
 
     state = {
-        name: '',
-        email: '',
-        phone: '',
-        password: '',
+        user: {
+            name: '',
+            email: '',
+            phone: '',
+            password: '',
+        },
+        showPopup: false
     };
 
     handleNewUser = ({target}) => {
-        this.setState({ [target.name]: target.value })
+        this.setState({ user: {...this.state.user, [target.name]: target.value} })
+    };
+
+    popOnUserSign = () => {
+        this.props.signIn(this.state.user);
+        this.setState({
+            showPopup: !this.state.showPopup
+        });
     };
 
     renderSigninForm = () => {
@@ -36,7 +48,7 @@ class userSignin extends Component {
                                 className='inputStyle'
                                 name='name'
                                 type='text'required
-                                value={this.state.name}
+                                value={this.state.user.name}
                                 onChange={this.handleNewUser}/>
                         </label>
                         <p>
@@ -47,7 +59,7 @@ class userSignin extends Component {
                                 className='inputStyle'
                                 name='phone'
                                 type='numeric' required
-                                value={this.state.phone}
+                                value={this.state.user.phone}
                                 onChange={this.handleNewUser}/>
                         </label>
                         <p>
@@ -58,13 +70,13 @@ class userSignin extends Component {
                                 className='inputStyle'
                                 name='email'
                                 type='email'required
-                                value={this.state.email}
+                                value={this.state.user.email}
                                 onChange={this.handleNewUser}/>
                         </label>
                         <p>
                             <FormattedMessage id='password'/>*
                         </p>
-                        <Password value={this.state.password} storePassword={this.handleNewUser}/>
+                        <Password value={this.state.user.password} storePassword={this.handleNewUser}/>
                     </form>
                 </fieldset>
                 <div className='infoLayout'>
@@ -73,9 +85,10 @@ class userSignin extends Component {
                             <FormattedMessage id='cancel'/>
                         </Link>
                     </button>
-                    <button onClick={() => this.props.signIn(this.state)} className='redButton'>
+                    <button onClick={() => this.popOnUserSign()} className='redButton'>
                         <FormattedMessage id='sign-in'/>
                     </button>
+                    { this.state.showPopup ? <Popup/> : null }
                 </div>
             </section>
         );
