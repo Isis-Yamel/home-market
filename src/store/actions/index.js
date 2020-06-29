@@ -2,6 +2,7 @@ import onUserLogin from '../../apis/userLogin';
 import onUserLogout from '../../apis/userLogout';
 import onUserSignin from '../../apis/userSignin';
 import fetchGroups from '../../apis/fetchGroups';
+import fetchCategories from '../../apis/fetchCategories';
 
 export const logIn = (data) => {
     return async dispatch => {
@@ -47,6 +48,17 @@ export const groupInformation = (data) => {
         fetchGroups(data).then((response) => {
             dispatch({
                 type: 'FETCH_GROUP',
+                payload: response.data
+            })
+        })
+    };
+};
+
+export const categoriesInformation = (data) => {
+    return async dispatch => {
+        fetchCategories(data).then((response) => {
+            dispatch({
+                type: 'FETCH_CATEGORIES',
                 payload: response.data
             })
         })

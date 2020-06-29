@@ -1,7 +1,8 @@
 const INITIAL_STATE = {
-    token: '',
+    categories: [],
+    groups: [],
     isUserAuth: false,
-    groups: []
+    token: '',
 };
 
 const authUser = (state, payload) => {
@@ -19,12 +20,21 @@ const groupData = (state, payload) => {
     };
 };
 
+const categoriesData = (state, payload) => {
+    return {
+        ...state,
+        categories: payload
+    };
+};
+
 export default (state = INITIAL_STATE, action) => {
     switch (action.type) {
         case 'LOG_IN':
             return authUser({...state}, action.payload);
         case 'FETCH_GROUP':
             return groupData({...state}, action.payload);
+        case 'FETCH_CATEGORIES':
+            return categoriesData({...state}, action.payload);
         default: return state;
     }
 };

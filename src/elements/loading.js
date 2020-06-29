@@ -2,10 +2,8 @@ import React from 'react'
 
 const Loading = () => {
     return (
-        <div className="ui segment">
-            <div className="ui active dimmer">
-                <div className="ui text loader">Loading</div>
-            </div>
+        <div className="ui active inverted dimmer">
+            <div className="ui small loader"></div>
         </div>
     );
 };

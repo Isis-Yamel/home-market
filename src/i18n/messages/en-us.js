@@ -48,5 +48,7 @@ export default {
         'catalog': 'Catalogue',
         'log-out': 'Log Out',
         'success-sign': 'Your user has been created correctly! You can now log in',
+        'shop-by-cat': 'Shop by category',
+        'choose-cat': 'Select your products',
     }
 };

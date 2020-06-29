@@ -7,9 +7,9 @@ import '../css/styles/popup.scss';
 const Popup = () => {
     return (
         <div className='popup__container'>
-            <p>
+            <h3>
                 <FormattedMessage id='success-sign'/>
-            </p>
+            </h3>
             <button className='redButton'>
                 <Link to='/log-in'>
                     <FormattedMessage id='user-login'/>

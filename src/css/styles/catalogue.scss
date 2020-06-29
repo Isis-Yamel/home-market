@@ -2,48 +2,54 @@
  ----------------------------*/
 @import '../utils/palette.scss';
 
-.catalogue {
-    &__iconsContainer {
-        display: flex;
-        height: 100px;
-        justify-content: space-around;
-        margin: 0 auto;
-        width: 60%;
-    }
-
-    &__iconContainer {
-        background-color: $lightGrey;
-        border-radius: 50%;
-        border: 2px solid $primaryRed;
-        cursor: pointer;
-        height: 66px;
-        position: relative;
-        width: 66px !important;
-
-        &:hover {
-            background-color: $primaryRed;
-        }
-    }
-
-    &__iconImage {
-        height: 44px;
-        left: 9px;
-        object-fit: scale-down;
-        position: relative;
-        top: 10px;
-        width: 44px;
-    }
-
-    &__title {
-        position: relative;
-        top: 34px;
-    }
-}
-
 @media (min-width: 300px) {
     .catalogue {
         &__iconsContainer {
+            display: flex;
+            height: 100px;
+            justify-content: space-around;
+            margin: 0 auto;
             width: 90%;
+        }
+
+        &__iconContainer {
+            background-color: $lightGrey;
+            border-radius: 50%;
+            border: 2px solid $primaryRed;
+            cursor: pointer;
+            height: 66px;
+            position: relative;
+            width: 66px !important;
+
+            &:hover {
+                background-color: $primaryRed;
+            }
+        }
+
+        &__iconImage {
+            height: 44px;
+            left: 9px;
+            object-fit: scale-down;
+            position: relative;
+            top: 10px;
+            width: 44px;
+        }
+
+        &__title {
+            position: relative;
+            top: 34px;
+        }
+
+        &__sectionTitle {
+            color: $darkGrey;
+            margin: 0;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        &__text {
+            color: $darkGrey;
+            text-align: center;
         }
     }
 }
@@ -51,7 +57,56 @@
 @media (min-width: 768px) {
     .catalogue {
         &__iconsContainer {
-            width: 60%;
+            width: 70%;
+        }
+    }
+}
+
+/* ---- CATALOGUE CATEGORIES -----
+ ----------------------------*/
+
+@media (min-width: 300px) {
+    .catalogueCategory {
+        &__section {
+            padding-top: 35px;
+        }
+
+        &__title {
+            text-align: center;
+        }
+
+        &__container {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            width: 100%;
+        }
+
+        &__item {
+            padding: 20px;
+            width: 100%;
+        }
+
+        &__itemImage {
+            width: 100%;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .catalogueCategory {
+
+        &__item {
+            width: 40%;
+        }
+    }
+}
+
+@media (min-width: 1080px) {
+    .catalogueCategory {
+
+        &__item {
+            width: 26%;
         }
     }
 }
