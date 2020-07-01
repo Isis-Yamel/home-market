@@ -2,14 +2,12 @@ import React from 'react'
 
 const CatalogueGroup = (props) => {
     const renderGroupCategories = () => {
-        if (props.groupCategory.length > 0) {
-            return props.groupCategory.map((item, index) => (
-                <div key={index} className='catalogueCategory__item '>
-                    <img className='catalogueCategory__itemImage' src={`https://github.globant.com/luciana-zavaleta/homemarket-json-server/blob/master/images/categories/cat_${item.id}.jpg?raw=true`}/>
-                    <p>{item.name}</p>
-                </div>
-            ))
-        }
+        return props.groupCategory.map((item, index) => (
+            <div key={index} className='catalogueCategory__item' onClick={() => props.currentCategorySelected(item.id)}>
+                <img alt={item.name} className='catalogueCategory__itemImage' src={`https://github.globant.com/luciana-zavaleta/homemarket-json-server/blob/master/images/categories/cat_${item.id}.jpg?raw=true`}/>
+                <h3 className='catalogueCategory__itemTitle'>{item.name}</h3>
+            </div>
+        ))
     };
 
     return (

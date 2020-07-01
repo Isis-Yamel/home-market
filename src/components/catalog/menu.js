@@ -9,6 +9,7 @@ import Profile from '../user/myProfile';
 import MenuBar from './menuBar';
 import SearchBar from './searchBar';
 import Catalogue from './catalogue';
+import UserFavorites from '../fav/userFavorites';
 
 const Menu = ({ auth }) => {
     return (
@@ -18,6 +19,7 @@ const Menu = ({ auth }) => {
             <Switch>
                 <ProtectedRoute path='/my-profile' loggedIn={auth} component={Profile}/>
                 <ProtectedRoute path='/catalog' loggedIn={auth} component={Catalogue}/>
+                <ProtectedRoute path='/favorites' loggedIn={auth} component={UserFavorites}/>
             </Switch>
         </BrowserRouter>
     );

@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import { menuData } from '../../utils/menuBarData';
 import { NavLink } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
+import { connect } from 'react-redux';
+import { logOut } from '../../store/actions';
 
 import '../../css/styles/menuBar.scss';
 
-const MenuBar = () => {
+const MenuBar = (props) => {
 
     const [isToggled, setToggled] = useState('false');
     const toggleMenu = () => setToggled(!isToggled);
@@ -25,6 +27,14 @@ const MenuBar = () => {
                                 </li>
                             </div>
                         ))}
+                        <div className='menu__element' onClick={() => props.logOut()}>
+                            <i className='fas fa-sign-out-alt menu__icons'/>
+                            <li className='menu__items'>
+                                <NavLink to='/'>
+                                    <FormattedMessage id='log-out'/>
+                                </NavLink>
+                            </li>
+                        </div>
                     </ul>
                 </nav>
             )
@@ -41,4 +51,4 @@ const MenuBar = () => {
     );
 };
 
-export default MenuBar;
+export default connect(null,{ logOut })(MenuBar);

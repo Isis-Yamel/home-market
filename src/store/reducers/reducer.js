@@ -1,7 +1,9 @@
 const INITIAL_STATE = {
     categories: [],
     groups: [],
+    favorites: [],
     isUserAuth: false,
+    products: [],
     token: '',
 };
 
@@ -27,6 +29,24 @@ const categoriesData = (state, payload) => {
     };
 };
 
+const productsData = (state, payload) => {
+    return {
+        ...state,
+        products: payload
+    };
+};
+
+const onUserLogOut = (state) => {
+    return {
+        ...state,
+        categories: [],
+        groups: [],
+        isUserAuth: false,
+        products: [],
+        token: '',
+    };
+};
+
 export default (state = INITIAL_STATE, action) => {
     switch (action.type) {
         case 'LOG_IN':
@@ -35,6 +55,10 @@ export default (state = INITIAL_STATE, action) => {
             return groupData({...state}, action.payload);
         case 'FETCH_CATEGORIES':
             return categoriesData({...state}, action.payload);
+        case 'FETCH_PRODUCTS':
+            return productsData({...state}, action.payload);
+        case 'LOG_OUT':
+            return onUserLogOut({...state});
         default: return state;
     }
 };

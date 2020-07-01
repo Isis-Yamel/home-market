@@ -1,8 +1,8 @@
 import onUserLogin from '../../apis/userLogin';
-import onUserLogout from '../../apis/userLogout';
 import onUserSignin from '../../apis/userSignin';
 import fetchGroups from '../../apis/fetchGroups';
 import fetchCategories from '../../apis/fetchCategories';
+import fetchProducts from '../../apis/fetchProducts';
 
 export const logIn = (data) => {
     return async dispatch => {
@@ -16,12 +16,10 @@ export const logIn = (data) => {
 };
 
 export const logOut = () => {
-    return async dispatch => {
-        onUserLogout().then(() => {
-            dispatch({
-                type: 'LOG_OUT',
-            })
-        })
+    return dispatch => {
+        dispatch({
+            type: 'LOG_OUT',
+        });
     };
 };
 
@@ -59,6 +57,17 @@ export const categoriesInformation = (data) => {
         fetchCategories(data).then((response) => {
             dispatch({
                 type: 'FETCH_CATEGORIES',
+                payload: response.data
+            })
+        })
+    };
+};
+
+export const productsInformation = (data) => {
+    return async dispatch => {
+        fetchProducts(data).then((response) => {
+            dispatch({
+                type: 'FETCH_PRODUCTS',
                 payload: response.data
             })
         })
