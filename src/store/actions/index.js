@@ -73,3 +73,23 @@ export const productsInformation = (data) => {
         })
     };
 };
+
+export const addFavorite = (data) => {
+    return {
+        type: 'ADD_FAVORITE',
+        payload: data
+    };
+};
+
+export const onUserSearch = (data) => {
+    return {
+        type: 'SEARCH_PRODUCT',
+        payload: data
+    };
+};
+
+export const searchByCategory = () => {
+    return {
+        type: 'SEARCH_BY_CATEGORY',
+    };
+};

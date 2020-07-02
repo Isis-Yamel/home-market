@@ -50,5 +50,7 @@ export default {
         'success-sign': 'Tu usuario se ha creado correctamente! Ya puedes ingresar',
         'shop-by-cat': 'Haz tu compra por categorias',
         'choose-cat': 'Selecciona tus productos',
+        'favorite-title': '¡Estos son tus favoritos!',
+        'favorite-text': 'Aqui encuentras tus productos favoritos',
     }
 };

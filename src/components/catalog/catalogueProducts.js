@@ -1,27 +1,14 @@
-import React from 'react'
+import React from 'react';
+import Products from '../../elements/products';
 
 const CatalogueProducts = (props) => {
-    const renderProductsByCategories = () => {
-        return props.productsByCategory.map((item, index) => (
-            <div className='products__container' key={index}>
-                <img className='products__image'
-                    alt={item.name}
-                    src={`https://github.globant.com/luciana-zavaleta/homemarket-json-server/blob/master/images/products/prod_${item.id}.jpg?raw=true`}/>
-                <p>{`$${item.currentPrice}`}</p>
-                <p>{item.name}</p>
-                <p>{item.refPrice}</p>
-            </div>
-        ))
-    };
-
     return (
         <section className='catalogueCategory__section'>
             <div className='products__section'>
-                {renderProductsByCategories()}
+                <Products products={props.productsByCategory} enableFav={true} userAddFavorite={props.userAddFavorite}/>
             </div>
         </section>
     );
 };
-
 
 export default CatalogueProducts;

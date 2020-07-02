@@ -50,5 +50,7 @@ export default {
         'success-sign': 'Your user has been created correctly! You can now log in',
         'shop-by-cat': 'Shop by category',
         'choose-cat': 'Select your products',
+        'favorite-title': '¡Tese are your favorites!',
+        'favorite-text': 'Here you find your favorite products',
     }
 };

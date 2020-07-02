@@ -8,7 +8,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { FormattedMessage } from 'react-intl';
 import { settings } from '../../utils/sliderSettings';
 import { categoriesData } from '../../utils/categoriesData';
-import { groupInformation, categoriesInformation, productsInformation } from '../../store/actions';
+import { groupInformation, categoriesInformation, productsInformation, addFavorite, searchByCategory } from '../../store/actions';
 import { connect } from 'react-redux';
 import '../../css/styles/catalogue.scss';
 
@@ -38,6 +38,13 @@ class Catalogue extends Component {
         });
     };
 
+    passProducts () {
+        if (this.props.search && this.props.term !== '') {
+            return this.filterByTerm();
+        }
+        return this.filterByCategory();
+    };
+
     filterByCategory () {
         return this.props.products.filter((categoryItem) => {
             if (this.state.categoryId === categoryItem.categoryId) {
@@ -46,6 +53,16 @@ class Catalogue extends Component {
         });
     };
 
+    filterByTerm () {
+        return this.props.products.filter((categoryItem) => {
+            console.log(categoryItem, 'here');
+
+            if (categoryItem.name.toLowerCase().includes(this.props.term.toLowerCase())) {
+                return categoryItem
+            }
+        });
+    }
+
     renderCategory (group) {
         this.setState({
             ...this.state,
@@ -53,6 +70,7 @@ class Catalogue extends Component {
             groupId: group.id,
             renderProducts: false,
         })
+        this.props.searchByCategory();
     };
 
     categorySelected = (categoryId) => {
@@ -61,6 +79,22 @@ class Catalogue extends Component {
             categoryId,
             renderProducts: !this.state.renderProducts,
         })
+    };
+
+    renderCatalogueProducts = () => {
+        let content = (
+            this.state.renderProducts || this.props.search ?
+            <CatalogueProducts
+                productsByCategory={this.passProducts()}
+                userAddFavorite={this.props.addFavorite}/>
+            :
+            <CatalogueGroup
+                renderProducts={this.toggleProducts}
+                groupName={this.state.groupSelected}
+                groupCategory={this.filterByGroup()}
+                currentCategorySelected={this.categorySelected}/>
+        )
+        return content;
     };
 
     renderSlider () {
@@ -82,12 +116,7 @@ class Catalogue extends Component {
                     </div>
                 ))}
                 </Slider>
-                {this.state.renderProducts ? <CatalogueProducts productsByCategory={this.filterByCategory()}/> : <CatalogueGroup
-                    renderProducts={this.toggleProducts}
-                    groupName={this.state.groupSelected}
-                    groupCategory={this.filterByGroup()}
-                    currentCategorySelected={this.categorySelected}/>
-                    }
+                {this.renderCatalogueProducts()}
             </Fragment>
         );
     };
@@ -106,8 +135,18 @@ const mapStateToProps = state => {
         categories: state.data.categories,
         group: state.data.groups,
         products: state.data.products,
+        search: state.data.doesSearch,
+        term: state.data.searchTerm,
         token: state.data.token,
     };
 };
 
-export default connect(mapStateToProps, { groupInformation, categoriesInformation, productsInformation })(Catalogue);
+export default connect(
+    mapStateToProps,
+    {
+        groupInformation,
+        categoriesInformation,
+        productsInformation,
+        addFavorite,
+        searchByCategory
+    })(Catalogue);

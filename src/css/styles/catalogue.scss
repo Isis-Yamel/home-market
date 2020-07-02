@@ -168,3 +168,16 @@
         }
     }
 }
+
+/* ---- FAVORITES SECTION -----
+ ----------------------------*/
+
+.fav {
+    &__container {
+        text-align: center;
+    }
+
+    &__title {
+        text-transform: uppercase;
+    }
+}

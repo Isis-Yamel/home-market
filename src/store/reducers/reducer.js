@@ -1,9 +1,11 @@
 const INITIAL_STATE = {
     categories: [],
+    doesSearch: false,
     groups: [],
     favorites: [],
     isUserAuth: false,
     products: [],
+    searchTerm: '',
     token: '',
 };
 
@@ -12,6 +14,18 @@ const authUser = (state, payload) => {
         ...state,
         token: payload,
         isUserAuth: true
+    };
+};
+
+const onUserLogOut = (state) => {
+    return {
+        ...state,
+        categories: [],
+        groups: [],
+        favorites: [],
+        isUserAuth: false,
+        products: [],
+        token: '',
     };
 };
 
@@ -36,14 +50,25 @@ const productsData = (state, payload) => {
     };
 };
 
-const onUserLogOut = (state) => {
+const addFavorite = (state, payload) => {
     return {
         ...state,
-        categories: [],
-        groups: [],
-        isUserAuth: false,
-        products: [],
-        token: '',
+        favorites: [...state.favorites, payload]
+    };
+};
+
+const userSearch = (state, payload) => {
+    return {
+        ...state,
+        doesSearch: true,
+        searchTerm: payload
+    };
+};
+
+const searchByCategory = (state) => {
+    return {
+        ...state,
+        doesSearch: false,
     };
 };
 
@@ -51,14 +76,20 @@ export default (state = INITIAL_STATE, action) => {
     switch (action.type) {
         case 'LOG_IN':
             return authUser({...state}, action.payload);
+        case 'LOG_OUT':
+            return onUserLogOut({...state});
         case 'FETCH_GROUP':
             return groupData({...state}, action.payload);
         case 'FETCH_CATEGORIES':
             return categoriesData({...state}, action.payload);
         case 'FETCH_PRODUCTS':
             return productsData({...state}, action.payload);
-        case 'LOG_OUT':
-            return onUserLogOut({...state});
+        case 'ADD_FAVORITE':
+            return addFavorite({...state}, action.payload);
+        case 'SEARCH_PRODUCT':
+            return userSearch({...state}, action.payload);
+        case 'SEARCH_BY_CATEGORY':
+            return searchByCategory({...state})
         default: return state;
     }
 };
