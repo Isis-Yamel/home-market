@@ -52,5 +52,9 @@ export default {
         'choose-cat': 'Selecciona tus productos',
         'favorite-title': '¡Estos son tus favoritos!',
         'favorite-text': 'Aqui encuentras tus productos favoritos',
+        'add-product': '+',
+        'substract-product': '-',
+        'buy-product': 'Comprar',
+        'no-stock': 'Sin stock',
     }
 };

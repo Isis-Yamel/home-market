@@ -1,8 +1,9 @@
 const INITIAL_STATE = {
+    cart: [],
     categories: [],
     doesSearch: false,
-    groups: [],
     favorites: [],
+    groups: [],
     isUserAuth: false,
     products: [],
     searchTerm: '',
@@ -19,12 +20,14 @@ const authUser = (state, payload) => {
 
 const onUserLogOut = (state) => {
     return {
-        ...state,
+        cart: [],
         categories: [],
-        groups: [],
+        doesSearch: false,
         favorites: [],
+        groups: [],
         isUserAuth: false,
         products: [],
+        searchTerm: '',
         token: '',
     };
 };
@@ -57,6 +60,13 @@ const addFavorite = (state, payload) => {
     };
 };
 
+const userAddToCart = (state, payload) => {
+    return {
+        ...state,
+        cart: [...state.cart, payload]
+    };
+};
+
 const userSearch = (state, payload) => {
     return {
         ...state,
@@ -86,10 +96,12 @@ export default (state = INITIAL_STATE, action) => {
             return productsData({...state}, action.payload);
         case 'ADD_FAVORITE':
             return addFavorite({...state}, action.payload);
+        case 'ADD_TO_CART':
+            return userAddToCart({...state}, action.payload);
         case 'SEARCH_PRODUCT':
             return userSearch({...state}, action.payload);
         case 'SEARCH_BY_CATEGORY':
-            return searchByCategory({...state})
+            return searchByCategory({...state});
         default: return state;
     }
 };

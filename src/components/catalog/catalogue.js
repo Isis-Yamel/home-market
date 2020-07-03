@@ -55,8 +55,6 @@ class Catalogue extends Component {
 
     filterByTerm () {
         return this.props.products.filter((categoryItem) => {
-            console.log(categoryItem, 'here');
-
             if (categoryItem.name.toLowerCase().includes(this.props.term.toLowerCase())) {
                 return categoryItem
             }

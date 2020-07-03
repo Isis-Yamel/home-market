@@ -32,7 +32,7 @@ class userSignin extends Component {
 
     renderSigninForm = () => {
         return (
-            <section className='registerSection registration__layout'>
+            <section className='mainSection registration__layout'>
                 <fieldset className='fieldsetStyle'>
                     <legend className='registration__legend'>
                         <h3>

@@ -52,5 +52,9 @@ export default {
         'choose-cat': 'Select your products',
         'favorite-title': '¡Tese are your favorites!',
         'favorite-text': 'Here you find your favorite products',
+        'add-product': '+',
+        'substract-product': '-',
+        'buy-product': 'Buy',
+        'no-stock': 'No stock',
     }
 };

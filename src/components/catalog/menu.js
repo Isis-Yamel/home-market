@@ -8,6 +8,7 @@ import ProtectedRoute from '../../utils/protectedRoute';
 import Profile from '../user/myProfile';
 import MenuBar from './menuBar';
 import SearchBar from './searchBar';
+import OnPurchase from '../purchase/onPurchase';
 import Catalogue from './catalogue';
 import UserFavorites from '../fav/userFavorites';
 
@@ -16,6 +17,7 @@ const Menu = ({ auth }) => {
         <BrowserRouter>
             <MenuBar/>
             <SearchBar/>
+            <OnPurchase/>
             <Switch>
                 <ProtectedRoute path='/my-profile' loggedIn={auth} component={Profile}/>
                 <ProtectedRoute path='/catalog' loggedIn={auth} component={Catalogue}/>

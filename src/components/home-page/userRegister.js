@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 const UserRegistration = () => {
     return (
         <Fragment>
-            <section className='registerSection home__signSection'>
+            <section className='mainSection home__signSection'>
                 <img className='home__image' alt='home market logo' src={redlogo}/>
                 <button className='redButton'>
                     <Link to='/log-in'>

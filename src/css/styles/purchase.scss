@@ -1,0 +1,38 @@
+@import '../utils/palette.scss';
+
+/* ----- PURCHASE SECTION -----
+ ----------------------------*/
+
+.cart {
+    &__container {
+        bottom: 234px;
+        left: 92%;
+        position: relative;
+        z-index: 5;
+    }
+
+    &__button {
+        color: $basicWhite;
+        cursor: pointer;
+        font-size: 2em;
+    }
+
+    &__style {
+        padding: 0;
+    }
+
+    &__list {
+        background-color: $basicWhite;
+        border: 2px solid black;
+        color: $darkGrey;
+        left: -27%;
+        margin: 4px;
+        position: absolute;
+        top: 28px;
+        width: 30%;
+    }
+
+    &__image {
+        width: 110px;
+    }
+}

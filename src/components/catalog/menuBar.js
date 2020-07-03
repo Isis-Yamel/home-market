@@ -42,7 +42,7 @@ const MenuBar = (props) => {
     };
 
     return (
-        <section className='menu__container registerSection registerSection__catalog'>
+        <section className='menu__container mainSection mainSection__catalog'>
             <div onClick={() => toggleMenu()} className='menu__hamButton'>
                 <i className='fas fa-bars'/>
             </div>

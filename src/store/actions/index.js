@@ -81,6 +81,13 @@ export const addFavorite = (data) => {
     };
 };
 
+export const purchasesList = (data) => {
+    return {
+        type: 'ADD_TO_CART',
+        payload: data
+    };
+};
+
 export const onUserSearch = (data) => {
     return {
         type: 'SEARCH_PRODUCT',

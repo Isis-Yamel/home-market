@@ -3,7 +3,7 @@ import { FormattedMessage } from 'react-intl';
 
 const ForgotPassword = () => {
     return (
-        <section className='registerSection registration__layout'>
+        <section className='mainSection registration__layout'>
             <h2>
                 <FormattedMessage id='forgot-pass-title'/>
             </h2>
