@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { FormattedMessage } from 'react-intl';
 import PurchaseButton from '../../elements/purchaseButton';
 import '../../css/styles/purchase.scss';
 
@@ -30,7 +29,15 @@ const OnPurchase = (props) => {
                     </ul>
                 </nav>
             );
-        };
+        } else if (isToggled === true && props.cart.length === 0) {
+            return (
+            <nav className='cart__list'>
+                <ul className='cart__style'>
+                    <li className='menu__items'>No hay elementos en tu carrito</li>
+                </ul>
+            </nav>
+            )
+        }
     };
 
     return (

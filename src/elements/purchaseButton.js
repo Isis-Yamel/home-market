@@ -1,40 +1,62 @@
-import React, { Fragment, Component } from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { FormattedMessage } from 'react-intl';
-import { purchasesList } from '../store/actions';
+import { addCart, removeFromCart } from '../store/actions';
+
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from 'react-toastify';
 
 class PurchaseButton extends Component {
 
     state = {counter: 0};
 
-    addProduct () {this.setState({...this.state, counter: this.state.counter + 1})};
-    substractProduct () {this.setState({...this.state, counter: this.state.counter - 1})};
+    addProduct () {
+        this.setState({...this.state, counter: this.state.counter + 1});
+        this.cartAddWarning(this.props.item.name);
+    };
 
-    // preventNegativeValues () {this.state.counter}
+    substractProduct () {
+        if(this.state.counter > 0) {
+            this.setState({...this.state, counter: this.state.counter - 1});
+            this.props.removeFromCart(this.props.item.id);
+            this.cartRemoveWarning(this.props.item.name)
+        } else if (this.state.counter === 0) {
+            this.setState({...this.state, counter: 0})
+        }
+    };
 
     purchaseHandler (item) {
         if (this.state.counter > 0) {
-            return this.props.purchasesList({item, counter:this.state.counter})
+            return this.props.addCart({item, counter:this.state.counter})
         } else {
             return null
         }
     };
 
+    cartAddWarning = (name) => {
+        toast(`You have added ${name}to your cart`, {position: toast.POSITION.TOP_CENTER});
+    };
+
+    cartRemoveWarning = (name) => {
+        toast(`You have removed ${name}to your cart`, {position: toast.POSITION.TOP_CENTER});
+    };
+
     render () {
         return (
-            <Fragment>
-                <button onClick={() => this.substractProduct()}>
+            <div className='products__buttonPurchasesContainer'>
+                <button className='products__buttonPurchases' onClick={() => this.substractProduct()}>
                     <FormattedMessage id='substract-product'/>
                 </button>
-                <button onClick={() => this.purchaseHandler(this.props.item)}>
-                    <FormattedMessage id='buy-product'/>
+                <button className='products__buttonPurchases' onClick={() => this.purchaseHandler(this.props.item)}>
+                    {this.state.counter === 0 ? <FormattedMessage id='buy-product'/> : `Comprar ${this.state.counter}`}
                 </button>
-                <button onClick={() => this.addProduct()}>
+                <button className='products__buttonPurchases' onClick={() => this.addProduct()}>
                     <FormattedMessage id='add-product'/>
                 </button>
-            </Fragment>
+                <ToastContainer autoClose={3000}/>
+            </div>
         );
     };
 };
 
-export default connect(null, { purchasesList })(PurchaseButton);
+export default connect(null, { addCart, removeFromCart })(PurchaseButton);

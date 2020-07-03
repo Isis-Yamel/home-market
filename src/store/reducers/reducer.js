@@ -67,6 +67,15 @@ const userAddToCart = (state, payload) => {
     };
 };
 
+const userRemoveFromCart = (state, payload) => {
+    let removeFromCart = [...state.cart].filter(item => item.item.id !== payload);
+    return {
+        ...state,
+        cart: removeFromCart
+
+    };
+};
+
 const userSearch = (state, payload) => {
     return {
         ...state,
@@ -98,6 +107,8 @@ export default (state = INITIAL_STATE, action) => {
             return addFavorite({...state}, action.payload);
         case 'ADD_TO_CART':
             return userAddToCart({...state}, action.payload);
+        case 'REMOVE_CART':
+            return userRemoveFromCart({...state}, action.payload);
         case 'SEARCH_PRODUCT':
             return userSearch({...state}, action.payload);
         case 'SEARCH_BY_CATEGORY':

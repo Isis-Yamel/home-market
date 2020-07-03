@@ -81,9 +81,16 @@ export const addFavorite = (data) => {
     };
 };
 
-export const purchasesList = (data) => {
+export const addCart = (data) => {
     return {
         type: 'ADD_TO_CART',
+        payload: data
+    };
+};
+
+export const removeFromCart = (data) => {
+    return {
+        type: 'REMOVE_CART',
         payload: data
     };
 };

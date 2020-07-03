@@ -2,6 +2,7 @@ import React, { Fragment } from 'react'
 import { connect } from 'react-redux';
 import Products from '../../elements/products';
 import { FormattedMessage } from 'react-intl';
+import '../../css/styles/products.scss';
 
 const UserFavorites = (props) => {
 
