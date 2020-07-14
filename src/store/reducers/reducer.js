@@ -3,10 +3,10 @@ const INITIAL_STATE = {
     categories: [],
     doesSearch: false,
     favorites: [],
-    groups: [],
     isUserAuth: false,
     products: [],
     searchTerm: '',
+    subcategories: [],
     token: '',
 };
 
@@ -24,18 +24,11 @@ const onUserLogOut = (state) => {
         categories: [],
         doesSearch: false,
         favorites: [],
-        groups: [],
         isUserAuth: false,
         products: [],
         searchTerm: '',
+        subcategories: [],
         token: '',
-    };
-};
-
-const groupData = (state, payload) => {
-    return {
-        ...state,
-        groups: payload
     };
 };
 
@@ -43,6 +36,13 @@ const categoriesData = (state, payload) => {
     return {
         ...state,
         categories: payload
+    };
+};
+
+const subcategoriesData = (state, payload) => {
+    return {
+        ...state,
+        subcategories: payload
     };
 };
 
@@ -97,10 +97,10 @@ export default (state = INITIAL_STATE, action) => {
             return authUser({...state}, action.payload);
         case 'LOG_OUT':
             return onUserLogOut({...state});
-        case 'FETCH_GROUP':
-            return groupData({...state}, action.payload);
         case 'FETCH_CATEGORIES':
             return categoriesData({...state}, action.payload);
+        case 'FETCH_SUBCATEGORIES':
+            return subcategoriesData({...state}, action.payload);
         case 'FETCH_PRODUCTS':
             return productsData({...state}, action.payload);
         case 'ADD_FAVORITE':

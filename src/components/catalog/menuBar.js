@@ -20,7 +20,7 @@ const MenuBar = (props) => {
                         {menuData.map((item, index) => (
                             <div className='menu__element' key={index}>
                                 <i className={`${item.icon} menu__icons`}/>
-                                <li className='menu__items' >
+                                <li className='menu__items'>
                                     <NavLink className='menu__items--style' to={item.route}>
                                         <FormattedMessage id={item.label}/>
                                     </NavLink>
@@ -51,4 +51,4 @@ const MenuBar = (props) => {
     );
 };
 
-export default connect(null,{ logOut })(MenuBar);
+export default connect(null, { logOut })(MenuBar);

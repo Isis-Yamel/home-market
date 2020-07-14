@@ -1,7 +1,7 @@
 import onUserLogin from '../../apis/userLogin';
 import onUserSignin from '../../apis/userSignin';
-import fetchGroups from '../../apis/fetchGroups';
 import fetchCategories from '../../apis/fetchCategories';
+import fetchSubCategories from '../../apis/fetchSubCategories';
 import fetchProducts from '../../apis/fetchProducts';
 
 export const logIn = (data) => {
@@ -41,18 +41,7 @@ export const signIn = (data) => {
     };
 };
 
-export const groupInformation = (data) => {
-    return async dispatch => {
-        fetchGroups(data).then((response) => {
-            dispatch({
-                type: 'FETCH_GROUP',
-                payload: response.data
-            })
-        })
-    };
-};
-
-export const categoriesInformation = (data) => {
+export const marketInformation = (data) => {
     return async dispatch => {
         fetchCategories(data).then((response) => {
             dispatch({
@@ -60,11 +49,12 @@ export const categoriesInformation = (data) => {
                 payload: response.data
             })
         })
-    };
-};
-
-export const productsInformation = (data) => {
-    return async dispatch => {
+        fetchSubCategories(data).then((response) => {
+            dispatch({
+                type: 'FETCH_SUBCATEGORIES',
+                payload: response.data
+            })
+        })
         fetchProducts(data).then((response) => {
             dispatch({
                 type: 'FETCH_PRODUCTS',
@@ -102,7 +92,7 @@ export const onUserSearch = (data) => {
     };
 };
 
-export const searchByCategory = () => {
+export const searchBySubCategory = () => {
     return {
         type: 'SEARCH_BY_CATEGORY',
     };

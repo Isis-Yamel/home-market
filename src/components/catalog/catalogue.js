@@ -1,38 +1,29 @@
 import React, { Component, Fragment } from 'react';
 import Loading from '../../elements/loading';
-
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-
+import SliderCarousel from '../../elements/caroussel';
 import { FormattedMessage } from 'react-intl';
-import { settings } from '../../utils/sliderSettings';
-import { categoriesData } from '../../utils/categoriesData';
-import { groupInformation, categoriesInformation, productsInformation, addFavorite, searchByCategory } from '../../store/actions';
+import { marketInformation, addFavorite, searchBySubCategory } from '../../store/actions';
 import { connect } from 'react-redux';
 import '../../css/styles/catalogue.scss';
-
 import CatalogueGroup from './catalogueGroup';
 import CatalogueProducts from './catalogueProducts';
 
 class Catalogue extends Component {
 
     state = {
+        subcategoryId: null,
         categoryId: null,
-        groupId: null,
-        groupSelected: '',
+        categorySelected: '',
         renderProducts: false,
     };
 
     componentDidMount () {
-        this.props.groupInformation(this.props.token);
-        this.props.categoriesInformation(this.props.token);
-        this.props.productsInformation(this.props.token);
+        this.props.marketInformation(this.props.token);
     };
 
-    filterByGroup () {
-        return this.props.categories.filter((groupItem) => {
-            if (this.state.groupId === groupItem.groupId) {
+    filterByCategory () {
+        return this.props.subcategories.filter((groupItem) => {
+            if (this.state.categoryId === groupItem.categoryId) {
                 return groupItem
             }
         });
@@ -42,12 +33,12 @@ class Catalogue extends Component {
         if (this.props.search && this.props.term !== '') {
             return this.filterByTerm();
         }
-        return this.filterByCategory();
+        return this.filterBySubCategory();
     };
 
-    filterByCategory () {
+    filterBySubCategory () {
         return this.props.products.filter((categoryItem) => {
-            if (this.state.categoryId === categoryItem.categoryId) {
+            if (this.state.subcategoryId === categoryItem.subcategoryId) {
                 return categoryItem
             }
         });
@@ -61,20 +52,20 @@ class Catalogue extends Component {
         });
     }
 
-    renderCategory (group) {
+    renderSubCategory (category) {
         this.setState({
             ...this.state,
-            groupSelected: group.name,
-            groupId: group.id,
+            categorySelected: category.name,
+            categoryId: category.id,
             renderProducts: false,
         })
-        this.props.searchByCategory();
+        this.props.searchBySubCategory();
     };
 
-    categorySelected = (categoryId) => {
+    subCategorySelected = (subcategoryId) => {
         this.setState({
             ...this.state,
-            categoryId,
+            subcategoryId,
             renderProducts: !this.state.renderProducts,
         })
     };
@@ -88,9 +79,9 @@ class Catalogue extends Component {
             :
             <CatalogueGroup
                 renderProducts={this.toggleProducts}
-                groupName={this.state.groupSelected}
-                groupCategory={this.filterByGroup()}
-                currentCategorySelected={this.categorySelected}/>
+                groupName={this.state.categorySelected}
+                groupCategory={this.filterByCategory()}
+                currentCategorySelected={this.subCategorySelected}/>
         )
         return content;
     };
@@ -104,16 +95,7 @@ class Catalogue extends Component {
                 <p className='catalogue__text'>
                     <FormattedMessage id='choose-cat'/>
                 </p>
-                <Slider className='catalogue__iconsContainer' {...settings}>
-                {categoriesData.map((cat, index) => (
-                    <div key={index}
-                        className='catalogue__iconContainer'
-                        onClick={() => this.renderCategory(this.props.group[index])}>
-                        <img className='catalogue__iconImage' src={cat.imageSource} alt={cat.areaLabel}/>
-                        <p className='catalogue__title'>{this.props.group[index].name}</p>
-                    </div>
-                ))}
-                </Slider>
+                <SliderCarousel category={this.props.categories} renderSubCategory={this.renderSubCategory.bind(this)}/>
                 {this.renderCatalogueProducts()}
             </Fragment>
         );
@@ -122,7 +104,7 @@ class Catalogue extends Component {
     render () {
         return (
             <section className='catalogSectionLayout'>
-                {this.props.group.length > 0 ? this.renderSlider() : <Loading/> }
+                {this.props.categories.length > 0 ? this.renderSlider() : <Loading/> }
             </section>
         );
     }
@@ -131,9 +113,9 @@ class Catalogue extends Component {
 const mapStateToProps = state => {
     return {
         categories: state.data.categories,
-        group: state.data.groups,
         products: state.data.products,
         search: state.data.doesSearch,
+        subcategories: state.data.subcategories,
         term: state.data.searchTerm,
         token: state.data.token,
     };
@@ -142,9 +124,8 @@ const mapStateToProps = state => {
 export default connect(
     mapStateToProps,
     {
-        groupInformation,
-        categoriesInformation,
-        productsInformation,
         addFavorite,
-        searchByCategory
-    })(Catalogue);
+        marketInformation,
+        searchBySubCategory,
+    })
+    (Catalogue);

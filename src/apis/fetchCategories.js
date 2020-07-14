@@ -1,6 +1,6 @@
 import api from './index';
 
-const fetchCategories = async (data) => {
+const fetchGroups = async (data) => {
     return await api.get('/categories', {
         headers: {
             'token': data
@@ -8,4 +8,4 @@ const fetchCategories = async (data) => {
     })
 };
 
-export default fetchCategories;
+export default fetchGroups;
