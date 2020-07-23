@@ -1,6 +1,6 @@
 import React, { useState, Fragment } from 'react'
 
-import '../css/styles/switchToggle.scss';
+import '../../css/styles/switchToggle.scss';
 
 const SwitchToggle = (props) => {
 

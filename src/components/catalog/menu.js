@@ -10,7 +10,7 @@ import MenuBar from './menuBar';
 import SearchBar from './searchBar';
 import OnPurchase from '../purchase/onPurchase';
 import Catalogue from './catalogue';
-import UserFavorites from '../fav/userFavorites';
+import UserFavorites from '../favorite/userFavorites';
 
 const Menu = ({ auth }) => {
     return (
@@ -29,7 +29,7 @@ const Menu = ({ auth }) => {
 
 const mapStateToProps = state => {
     return {
-        auth: state.data.isUserAuth
+        auth: state.auth.isUserAuth
     };
 };
 

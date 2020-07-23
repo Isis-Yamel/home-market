@@ -1,5 +1,5 @@
 import React from 'react';
-import Products from '../../elements/products';
+import Products from '../common/products';
 
 const CatalogueProducts = (props) => {
     return (

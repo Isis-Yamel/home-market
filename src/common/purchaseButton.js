@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { FormattedMessage } from 'react-intl';
-import { addCart, removeFromCart } from '../store/actions';
+import { addCart, removeFromCart } from '../../store/actions';
 
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer, toast } from 'react-toastify';

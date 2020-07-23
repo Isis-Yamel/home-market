@@ -1,11 +1,11 @@
 import React from 'react';
-import { categoriesData } from '../utils/categoriesData';
+import { categoriesData } from '../../utils/categoriesData';
 
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import { settings } from '../utils/sliderSettings';
+import { settings } from '../../utils/sliderSettings';
 
 const SliderCarousel = (props) => {
     return (

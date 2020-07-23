@@ -16,7 +16,7 @@ import { Route, Switch } from 'react-router-dom';
 import { IntlProvider } from 'react-intl';
 import messages from '../i18n/messages';
 import { locales } from '../i18n/locales';
-import SwitchToggle from '../elements/switchToggle';
+import SwitchToggle from '../components/common/switchToggle';
 
 const App = ({ auth }) => {
     const [locale, setLocale] = useState(locales.SPANISH)
@@ -45,8 +45,7 @@ const App = ({ auth }) => {
 
 const mapStateToProps = state => {
     return {
-        auth: state.data.isUserAuth,
-        lang: state.data.locale
+        auth: state.auth.isUserAuth,
     };
 };
 

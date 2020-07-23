@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
-import Loading from '../../elements/loading';
-import SliderCarousel from '../../elements/caroussel';
+import Loading from '../common/loading';
+import SliderCarousel from '../common/caroussel';
 import { FormattedMessage } from 'react-intl';
 import { marketInformation, addFavorite, searchBySubCategory } from '../../store/actions';
 import { connect } from 'react-redux';
@@ -114,10 +114,10 @@ const mapStateToProps = state => {
     return {
         categories: state.data.categories,
         products: state.data.products,
-        search: state.data.doesSearch,
+        search: state.search.doesSearch,
         subcategories: state.data.subcategories,
-        term: state.data.searchTerm,
-        token: state.data.token,
+        term: state.search.searchTerm,
+        token: state.auth.token,
     };
 };
 

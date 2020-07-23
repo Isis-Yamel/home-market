@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import { FormattedMessage } from 'react-intl';
-import PurchaseButton from '../elements/purchaseButton';
-import '../css/styles/products.scss';
+import PurchaseButton from './purchaseButton';
+import '../../css/styles/products.scss';
 
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer, toast } from 'react-toastify';
@@ -22,7 +22,7 @@ const Products = (props) => {
             <div className='products__container' key={index}>
                 <img className='products__image'
                     alt={item.name}
-                    src={`https://github.globant.com/luciana-zavaleta/homemarket-json-server/blob/master/images/products/prod_${item.id}.jpg?raw=true`}/>
+                    src={`https://github.com//Isis-Yamel/json-server/blob/master/images/products/prod_${item.id}.jpg?raw=true`}/>
                 <p>{`$${item.currentPrice}`}</p>
                 <p>{item.name}</p>
                 <p>{item.refPrice}</p>

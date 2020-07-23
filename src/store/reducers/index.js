@@ -1,7 +1,14 @@
 import { combineReducers } from 'redux';
-import reducer from './reducer';
-// import localeReducer from './localeReducer';
+import authReducer from './authReducer';
+import cartReducer from './cartReducer';
+import dataReducer from './dataReducer';
+import favoritesReducer from './favoritesReducer'
+import searchReducer from './searchReducer';
 
 export default combineReducers({
-    data: reducer,
+    auth: authReducer,
+    cart: cartReducer,
+    data: dataReducer,
+    favorite: favoritesReducer,
+    search: searchReducer,
 });

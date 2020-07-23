@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
 
-import '../css/styles/popup.scss';
+import '../../css/styles/popup.scss';
 
 const Popup = () => {
     return (

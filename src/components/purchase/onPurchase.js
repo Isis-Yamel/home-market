@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import PurchaseButton from '../../elements/purchaseButton';
+import PurchaseButton from '../common/purchaseButton';
 import '../../css/styles/purchase.scss';
 
 const OnPurchase = (props) => {
@@ -52,7 +52,7 @@ const OnPurchase = (props) => {
 
 const mapStateToProps = state => {
     return {
-        cart: state.data.cart,
+        cart: state.cart.shopCart,
     };
 };
 

@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { Link } from 'react-router-dom';
-import Password from '../../elements/password';
+import Password from '../common/password';
 import { connect } from 'react-redux';
 import { signIn } from '../../store/actions';
-
-import Popup from '../../elements/popup';
+import Popup from '../common/popup';
 
 class userSignin extends Component {
 
