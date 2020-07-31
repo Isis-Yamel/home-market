@@ -16,7 +16,7 @@ const UserFavorites = (props) => {
                     <FormattedMessage id='favorite-text'/>
                 </p>
             </Fragment>
-        )
+        );
     };
 
     return (
